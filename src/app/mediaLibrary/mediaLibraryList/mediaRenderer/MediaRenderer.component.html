@@ -1,0 +1,26 @@
+<div class="container" [ngClass]="wrapperCssClass" (click)="clicked()" (mouseenter)="onMouseOver()" (mouseleave)="onMouseOut()">
+    <img *ngIf="state == 'NORMAL' && animatedPreviewVisible" class="preview" [src]="previewUrl">
+    <img *ngIf="stillPreviewVisible" class="preview" [src]="stillImageUrl">
+    <img *ngIf="state === 'BUILDING_PREVIEW' || state === 'CONVERTING'" class="preview" src="assets/images/5.gif">
+
+    <div *ngIf="state == 'UPLOADING'">{{uploadProgress}}%</div>
+
+    <div *ngIf="state == 'NORMAL'" class="info">
+        <div class="infoItem">{{date}}</div>
+        <div (click)="insertClicked($event)" style="color: blue; text-decoration: underline; font-size: 0.8em; cursor: pointer;">Вставить в сообщение</div>
+        <div *ngIf="type==0" class="infoItem">{{durationString}}</div>
+    </div>
+
+    <div *ngIf="soldToCurrentContact" class="soldToCurrentContact">Куплен ({{currentContactName}})</div>
+
+    <div *ngIf="state == 'NORMAL'" class="costContainer" title="Цена">
+      <div class="cost">{{cost}}</div>
+    </div>
+
+    <div *ngIf="state == 'NORMAL'" class="purchasesCounter" title="Продажи/Лиды">
+        <div class="totalPurchases">{{totalPurchases}}</div>
+        <div class="totalPreviewReviews">/{{totalPreviewReviews}}</div>
+    </div>
+
+    <div class="removeButton" (click)="removeClicked($event)"></div>
+</div>

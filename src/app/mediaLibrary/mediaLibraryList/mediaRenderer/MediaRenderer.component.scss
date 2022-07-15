@@ -1,0 +1,91 @@
+$rendererHeight:60px;
+.container{
+  position: relative;
+  width: 99%;
+  height: $rendererHeight;
+  display: flex;
+  flex-direction: row;
+  margin: 2px 0;
+  border: 1px solid grey;
+}
+.selected{
+  border: 3px solid darkorange!important;
+}
+
+.preview{
+  display: block;
+  max-width:$rendererHeight;
+  max-height:$rendererHeight;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.info{
+  width: calc(100% - 20px - #{$rendererHeight});
+  display: flex;
+  flex-direction: column;
+}
+
+.purchasesCounter{
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 25px;
+}
+.totalPurchases{
+  color: red;
+  font-weight: bold;
+}
+.totalPreviewReviews{
+  color: blue;
+  font-weight: bold;
+}
+.costContainer{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.infoItem{
+  font-size:0.8em;
+}
+
+.cost{
+  width: 30px;
+  height: 30px;
+  font-weight: bolder;
+  font-size: 1.4em;
+  background-color: yellow;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.soldToCurrentContact{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.removeButton{
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/assets/images/close_btn.png");
+}

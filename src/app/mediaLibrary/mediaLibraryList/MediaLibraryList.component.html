@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="header">
+        <div *ngIf="mode == 'video'">Ваши видео</div>
+        <div *ngIf="mode == 'image'">Ваши фото</div>
+        <div *ngIf="mode != 'image'" class="headerMark">Каждая 10я продажа увеличивает стоимость на 1 монету</div>
+    </div>
+    <div #userMediaList class="mediaList">
+        <media-renderer *ngFor="let media of collection" [data]="media" (remove)="removeUserMedia($event)" (selected)="selectUserMedia($event)" (insertInto)="insertUserMediaInto($event)"></media-renderer>
+    </div>
+</div>
